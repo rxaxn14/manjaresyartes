@@ -1,0 +1,96 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Century Gothic', sans-serif;
+}
+
+body {
+    background-color: #f7f3e9; /* Fondo claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 16px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    color: #994e2b; /* Cobre */
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #db9e61; /* Arena */
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    font-size: 14px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+    outline: none;
+    border-color: #994e2b; /* Cobre */
+}
+
+button {
+    background-color: #994e2b; /* Cobre */
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #301c17; /* Marrón oscuro */
+}
+
+/* Mensaje de error o éxito */
+.message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.message.success {
+    background-color: #28a745; /* Verde éxito */
+    color: white;
+}
+
+.message.error {
+    background-color: #dc3545; /* Rojo error */
+    color: white;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #888888;
+}

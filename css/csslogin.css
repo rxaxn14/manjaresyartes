@@ -1,0 +1,172 @@
+/* Estilos generales */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Century Gothic', sans-serif;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e7dcbe; /* Marfil Suave */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    font-size: 16px;
+}
+
+.container {
+    background-color: #ffffff;
+    width: 400px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    text-align: center;
+}
+
+h1 {
+    color: #301c17; /* Marrón Oscuro */
+    margin-bottom: 20px;
+}
+
+img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+/* Formulario de inicio de sesión */
+form {
+    padding: 20px;
+    background-color: #8f7964; /* Marrón Claro */
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #db9e61; /* Arena */
+    border-radius: 4px;
+    background-color: #f5f5f5;
+}
+
+input[type="submit"] {
+    background-color: #994e2b; /* Cobre */
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #301c17; /* Marrón Oscuro */
+}
+
+button {
+    background-color: #db9e61; /* Arena */
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #994e2b; /* Cobre */
+}
+
+/* Footer de la página */
+.footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #888888;
+}
+
+.footer a {
+    color: #994e2b; /* Cobre */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #301c17; /* Marrón Oscuro */
+}
+
+/* Mensajes de estado */
+.ok {
+    background-color: #1e6;
+    color: #fff;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.bad {
+    background-color: #a22;
+    color: #fff;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.off {
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.gabo {
+    padding: 50px 20px;
+    background-color: #381b1ba6;
+    margin: calc(25% + 100px);
+    padding-top: 28px;
+    margin-bottom: 30px;
+    line-height: 20px;
+}
+
+/* Header */
+header {
+    width: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    margin-left: 5px;
+    width: calc(20% - 100px);
+    font-family: 'Montez', cursive;
+    font-size: 55px;
+    color: #db9e61; /* Arena */
+}
+
+header a {
+    margin-right: 30px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+    transition: all ease 300ms;
+}
+
+.login-box {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+
