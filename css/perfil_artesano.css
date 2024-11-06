@@ -1,0 +1,159 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Century Gothic', sans-serif;
+}
+
+header {
+    background-color: #301c17;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 120px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #db9e61;
+}
+
+body {
+    background-color: #f7f3e9; 
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+.container {
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: 20px auto; /* Centrar el contenedor */
+    padding: 20px; /* Espaciado interior */
+    background-color: #f7f3e9; /* Color de fondo del contenedor */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.profile-photo {
+    width: 150px; /* Ajusta el tamaño según sea necesario */
+    height: 150px; /* Ajusta el tamaño según sea necesario */
+    object-fit: cover; /* Asegúrate de que la imagen se ajuste bien */
+    border-radius: 50%; /* Hace que la imagen sea redonda */
+    display: block; /* Asegura que la imagen esté en un bloque */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+
+.profile-container {
+    text-align: center; /* Centrar el texto */
+    margin-top: 20px; /* Espaciado superior */
+}
+
+/* Aumentar el tamaño de la fuente de los encabezados */
+h1 {
+    font-size: 2rem; /* Tamaño más grande */
+}
+
+h2 {
+    font-size: 1.5rem; /* Tamaño más grande para los subtítulos */
+}
+
+
+p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Estilo para la lista de productos */
+.products {
+    margin-top: 30px;
+}
+
+.products h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #994e2b;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.product-item {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product-item h3 {
+    font-size: 1.25rem;
+    margin-top: 10px;
+    color: #301c17;
+}
+
+/* Contacto */
+.contact-info {
+    margin-top: 20px;
+    text-align: left;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
+    font-size: 1.5rem;
+    color: #994e2b;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    margin-bottom: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: #301c17;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    font-size: 1rem;
+}

@@ -1,3 +1,8 @@
+
+<?php
+session_start(); // Iniciar la sesión
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,12 +19,20 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Productos</a></li>
+                <li><a href="home.php">Inicio</a></li>
+                <li><a href="Productos.php">Productos</a></li>
+
                 <li><a href="#">Nosotros</a></li>
                 <li><a href="#">Contacto</a></li>
-                <li><a href="index1.html">Iniciar Sesión</a></li> <!-- Iniciar sesión -->
-                <li><a href="register.php">Registrarse</a></li> <!-- Registrarse -->
+                
+                <!-- Mostrar enlaces según si el usuario ha iniciado sesión -->
+                <?php if (!isset($_SESSION['usuario_id'])): ?>
+                    <li><a href="login.php">Iniciar Sesión</a></li>
+                    <li><a href="register.php">Registrarse</a></li>
+                <?php else: ?>
+                    <li><a href="perfil.php">Mi Perfil</a></li>
+                    <li><a href="logout.php">Cerrar Sesión</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>

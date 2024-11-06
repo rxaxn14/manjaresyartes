@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #8a4b2f;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+header .logo img {
+    height: 80px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.profile-photo {
+    max-width: 150px;
+    border-radius: 50%;
+}
+
+.profile-container {
+    margin-top: 20px;
+}
+
+.add-product-container {
+    margin-top: 40px;
+}
+
+.add-product-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.add-product-container form label {
+    font-weight: bold;
+}
+
+.add-product-container form input,
+.add-product-container form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.add-product-container form button {
+    padding: 10px;
+    background-color: #8a4b2f;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.add-product-container form button:hover {
+    background-color: #994e2b;
+}

@@ -1,0 +1,90 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f3e9;
+    padding: 20px;
+}
+
+.factura-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #301c17;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p, th, td {
+    font-size: 16px;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #db9e61;
+    color: white;
+    text-align: center;
+}
+
+table td {
+    text-align: center;
+}
+
+.total-a-pagar {
+    margin-top: 20px;
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.opciones-pago {
+    margin-top: 30px;
+}
+
+.opciones-pago ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.opciones-pago li {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+a {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #db9e61;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+a:hover {
+    background-color: #b58350;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #999;
+    font-size: 14px;
+}
