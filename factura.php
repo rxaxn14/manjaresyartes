@@ -132,6 +132,28 @@ $costo_envio = isset($_SESSION['costo_envio']) ? $_SESSION['costo_envio'] : 0; /
             margin-right: 5px;
         }
 
+        #tarjeta-option {
+    margin-top: 20px;
+}
+
+#tarjeta-option button {
+    background-color: #f8b400;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+#tarjeta-option button:hover {
+    background-color: #d49400;
+}
+
         .fa-cc-visa {color: navy;}
         .fa-cc-mastercard {color: red;}
         .fa-cc-amex {color: blue;}
@@ -151,6 +173,35 @@ $costo_envio = isset($_SESSION['costo_envio']) ? $_SESSION['costo_envio'] : 0; /
             border-radius: 10px;
             border: 1px solid #ddd;
         }
+        #qr-option {
+    text-align: center; /* Centra el contenido */
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#qr-option h3 {
+    font-size: 22px;
+    color: #333;
+    font-weight: bold;
+}
+
+#qr-option p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+#qr-option img {
+    width: 150px; /* Tamaño más pequeño */
+    height: auto;
+    margin-top: 15px;
+    border: 2px solid #f8b400; /* Borde del código QR */
+    padding: 10px;
+    border-radius: 10px;
+}
 
         .btn-envio {
             background-color: #f8b400;
@@ -192,6 +243,14 @@ $costo_envio = isset($_SESSION['costo_envio']) ? $_SESSION['costo_envio'] : 0; /
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+        .opciones-pago {
+            margin-top: 30px;
+        }
+
+        #qr-option, #tarjeta-option {
+            display: none;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -264,7 +323,27 @@ $costo_envio = isset($_SESSION['costo_envio']) ? $_SESSION['costo_envio'] : 0; /
         </div>
 
         <div class="opciones-pago">
-            <h2>Método de Pago</h2>
+    <h2>Método de Pago</h2>
+
+    <label for="metodo_pago">Seleccionar Método de Pago:</label>
+    <select id="metodo_pago">
+        <option value="0">Seleccione un método</option>
+        <option value="1">Pago con QR</option>
+        <option value="2">Pago con Tarjeta</option>
+    </select>
+
+    <!-- Opción de pago con QR -->
+    <div id="qr-option" style="display:none;">
+        <h3>Pago con QR</h3>
+        <p>Escanea el código QR para completar el pago.</p>
+        <!-- Aquí puedes poner el código QR -->
+        <img src="Imagenes/qr.jpg" alt="Código QR" style="width: 150px; height: auto; border: 2px solid #f8b400; padding: 10px; border-radius: 10px;">
+        </div>
+
+    <!-- Opción de pago con tarjeta -->
+    <div id="tarjeta-option" style="display:none;">
+        <h3>Pago con Tarjeta</h3>
+        <form action="procesar_pago.php" method="POST">
 
             <!-- Métodos de pago -->
             <div class="payment-methods">
@@ -274,42 +353,63 @@ $costo_envio = isset($_SESSION['costo_envio']) ? $_SESSION['costo_envio'] : 0; /
                 <i class="fa fa-cc-discover" aria-hidden="true"></i>
             </div>
 
-            <form action="confirmacion.php" method="POST">
-                <div class="input-container">
-                    <label for="nombre">Nombre del Titular:</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del titular" required>
-                </div>
+            <div class="input-container">
+                <label for="nombre">Nombre del Titular:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del titular" required>
+            </div>
 
-                <div class="input-container">
-                    <label for="tarjeta">Número de Tarjeta:</label>
-                    <input type="text" id="tarjeta" name="tarjeta" placeholder="1234 5678 1234 5678" required>
-                </div>
+            <div class="input-container">
+                <label for="tarjeta">Número de Tarjeta:</label>
+                <input type="text" id="tarjeta" name="tarjeta" placeholder="1234 5678 1234 5678" required>
+            </div>
 
-                <div class="input-container">
-                    <label for="vencimiento">Fecha de Vencimiento (MM/AAAA):</label>
-                    <input type="text" id="vencimiento" name="vencimiento" placeholder="MM/AAAA" required>
-                </div>
+            <div class="input-container">
+                <label for="vencimiento">Fecha de Vencimiento (MM/AAAA):</label>
+                <input type="text" id="vencimiento" name="vencimiento" placeholder="MM/AAAA" required>
+            </div>
 
-                <div class="input-container">
-                    <label for="cvv">Código de Seguridad (CVV):</label>
-                    <input type="password" id="cvv" name="cvv" placeholder="CVV" required>
-                </div>
+            <div class="input-container">
+                <label for="cvv">Código de Seguridad (CVV):</label>
+                <input type="password" id="cvv" name="cvv" placeholder="CVV" required>
+            </div>
 
-                <!-- Aquí añado el mapa para seleccionar ubicación -->
-                <h2>Seleccionar Ubicación de Envío</h2>
-                <div id="map"></div>
-                <input type="hidden" id="ubicacion" name="ubicacion" value="Ubicación no seleccionada">
+            <button type="submit">Pagar con tarjeta</button>
+        </form>
+    </div>
 
-                <!-- Botones adicionales para ubicación -->
-                <div class="location-buttons">
-                    <button type="button" id="getLocation">Obtener mi Ubicación Actual</button>
-                    <button type="submit">Guardar Ubicación</button>
-                </div>
+    <!-- Aquí añado el mapa para seleccionar ubicación -->
+    <h2>Seleccionar Ubicación de Envío</h2>
+    <div id="map"></div>
+    <input type="hidden" id="ubicacion" name="ubicacion" value="Ubicación no seleccionada">
 
-                <!-- Botón para completar la compra -->
-                <button type="submit">Completar Compra</button>
-            </form>
-        </div>
+    <!-- Botones adicionales para ubicación -->
+    <div class="location-buttons">
+        <button type="button" id="getLocation">Obtener mi Ubicación Actual</button>
+        <button type="submit">Guardar Ubicación</button>
+    </div>
+
+    <!-- Botón para completar la compra -->
+    <button type="submit">Completar Compra</button>
+</div>
+
+<script>
+    // Mostrar u ocultar las opciones de pago dependiendo de la selección
+    document.getElementById('metodo_pago').addEventListener('change', function() {
+        var metodoPago = this.value;
+        
+        // Ocultar todas las opciones
+        document.getElementById('qr-option').style.display = 'none';
+        document.getElementById('tarjeta-option').style.display = 'none';
+
+        // Mostrar la opción seleccionada
+        if (metodoPago == '1') {
+            document.getElementById('qr-option').style.display = 'block';
+        } else if (metodoPago == '2') {
+            document.getElementById('tarjeta-option').style.display = 'block';
+        }
+    });
+</script>
+
 
         <footer class="footer">
             <p>© 2024 Tienda en Línea. Todos los derechos reservados.</p>
